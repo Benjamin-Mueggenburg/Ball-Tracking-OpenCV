@@ -63,7 +63,7 @@ class RobotVision:
         while 1:
             # get a frame from the webcam
             frame = cvQueryFrame(capture)
-            if frame is not None:</p>
+            if frame is not None:
                 # convert to HSV for color matching
                 # as hue wraps around, we need to match it in 2 parts and OR together
                 cvCvtColor(frame, hsv_frame, CV_BGR2HSV)
