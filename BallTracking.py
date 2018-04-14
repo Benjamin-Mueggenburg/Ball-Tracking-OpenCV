@@ -51,10 +51,10 @@ class RobotVision:
         # start capturing form webcam
         capture = cvCreateCameraCapture(-1)
         if not capture:
-            print &quot;Could not open webcam&quot;
+            print "Could not open webcam"
             sys.exit(1)
             #CV windows
-        cvNamedWindow( &quot;Camera&quot;, CV_WINDOW_AUTOSIZE )
+        cvNamedWindow( "Camera", CV_WINDOW_AUTOSIZE )
     def TrackBall(i):
         t = Thread(target=TrackBallThread, args=(i,))
         t.start()
@@ -76,7 +76,7 @@ class RobotVision:
                 # find largest circle
                 maxRadius = 0
                 x = 0
-                y = 0>
+                y = 0
                 found = False
                 for i in range(circles.total):
                     circle = circles[i]
@@ -85,9 +85,9 @@ class RobotVision:
                         maxRadius = circle[2]
                         x = circle[0]
                         y = circle[1]
-                cvShowImage( &quot;Camera&quot;, frame );
+                cvShowImage( "Camera", frame );
                 if found:
-                    print &quot;ball detected at position:&quot;,x, &quot;,&quot;, y, &quot; with radius:&quot;, maxRadius
+                    print "ball detected at position: ",x, "," , y, "with radius:", maxRadius
                     if x &gt; 420:
                         # need to pan right
                         servoPos += 5
